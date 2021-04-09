@@ -51,7 +51,6 @@ func Slack(Icon string, Col string) error {
 		env.SlackChannelId,
 		slack.MsgOptionAsUser(false),
 		slack.MsgOptionAttachments(attachment),
-		slack.MsgOptionAsUser(true),
 	)
 	if err != nil {
 		fmt.Printf("%s\n", err)
