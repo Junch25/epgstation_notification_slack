@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  go:
+    build: ./build
+    container_name: '${COMPOSE_PROJECT_NAME}-go'
+    tty: true
+    volumes:
+      - "../../rec_notice_slack_dev/:/opt/src"

@@ -1,0 +1,11 @@
+module cmd
+
+go 1.16
+
+require (
+	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/pkg/errors v0.9.1 // indirect
+	github.com/slack-go/slack v0.8.2
+	github.com/spf13/cobra v1.1.3
+	gotest.tools/gotestsum v1.6.3 // indirect
+)
