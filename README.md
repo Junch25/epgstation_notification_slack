@@ -2,7 +2,7 @@
 EPGStationの録画開始・終了・エラーのSlack通知です。
 
 ## CI/CD
-[![CircleCI](https://circleci.com/gh/Junch25/epgstation_notification_dev.svg?style=svg&circle-token=dca9a42b603c37eecb8e2c033762eb1b096a873b)](https://circleci.com/gh/Junch25/epgstation_notification_dev)
+[![CircleCI](https://circleci.com/gh/Junch25/epgstation_notification.svg?style=svg)](https://circleci.com/gh/Junch25/epgstation_notification)
 
 ## 導入手順
 ### Slackアプリを作成
