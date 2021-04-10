@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/slack-go/slack"
-	"golang.org/x/tools/go/ssa/interp/testdata/src/os"
+	"os"
 )
 
 func Slack(Icon string, Col string) error {
