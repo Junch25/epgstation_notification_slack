@@ -4,6 +4,8 @@ import (
 	"github.com/kelseyhightower/envconfig"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
+	"os"
+	"path/filepath"
 )
 
 type cmdEnv struct {
@@ -32,7 +34,11 @@ func loadEnv() (env cmdEnv, err error) {
 }
 
 func loadCfg() (config cmdCfg, err error) {
-	data, err := ioutil.ReadFile("config.yml")
+	cfg, err := loadYml()
+	if err != nil {
+		return config, err
+	}
+	data, err := ioutil.ReadFile(cfg)
 	if err != nil {
 		return config, err
 	}
@@ -41,4 +47,12 @@ func loadCfg() (config cmdCfg, err error) {
 		return config, err
 	}
 	return config, err
+}
+
+func loadYml() (string, error) {
+	ymlFilePath, err := os.Executable()
+	if err != nil {
+		return ymlFilePath, err
+	}
+	return filepath.Join(filepath.Dir(ymlFilePath), "config.yml"), nil
 }
