@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/slack-go/slack"
+	"golang.org/x/tools/go/ssa/interp/testdata/src/os"
 )
 
 func Slack(Icon string, Col string) error {
@@ -11,8 +12,10 @@ func Slack(Icon string, Col string) error {
 		return err
 	}
 
+	SlackToken := os.Getenv("SLACK_API_TOKEN")
+	SlackChannel := os.Getenv("SLACK_CHANNEL_ID")
 	api := slack.New(
-		env.SlackToken,
+		SlackToken,
 		slack.OptionDebug(true),
 		)
 	attachment := slack.Attachment{
@@ -48,7 +51,7 @@ func Slack(Icon string, Col string) error {
 		},
 	}
 	channelID, timestamp, err := api.PostMessage(
-		env.SlackChannelId,
+		SlackChannel,
 		slack.MsgOptionAsUser(false),
 		slack.MsgOptionAttachments(attachment),
 	)

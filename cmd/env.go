@@ -13,8 +13,6 @@ type cmdEnv struct {
 	Extended             string `envconfig:"EXTENDED"`
 	RecPath              string `envconfig:"RECPATH"`
 	LogPath              string `envconfig:"LOGPATH"`
-	SlackToken           string `envconfig:"SLACK_API_TOKEN"`
-	SlackChannelId       string `envconfig:"SLACK_CHANNEL_ID"`
 }
 
 func loadEnv() (env cmdEnv, err error) {
