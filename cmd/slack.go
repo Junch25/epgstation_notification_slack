@@ -6,19 +6,22 @@ import (
 )
 
 func Slack(Icon string, Col string) error {
-	env, err := loadEnv()
-	config, err := loadCfg()
-	if err != nil {
-		return err
+	env, err1 := loadEnv()
+	if err1 != nil {
+		return err1
+	}
+	config, err2 := loadCfg()
+	if err2 != nil {
+		return err2
 	}
 	api := slack.New(
 		config.SlackCfg.SlackKey,
 		slack.OptionDebug(true),
-		)
+	)
 	attachment := slack.Attachment{
 		Fallback: Icon + env.Name,
-		Color:   Col,
-		Title: Icon + env.Name,
+		Color:    Col,
+		Title:    Icon + env.Name,
 		Fields: []slack.AttachmentField{
 			{
 				Title: "Channel",
