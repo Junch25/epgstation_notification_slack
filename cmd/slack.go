@@ -7,12 +7,13 @@ import (
 
 func Slack(Icon string, Col string) error {
 	env, err := loadEnv()
+	cfg, err := loadCfg()
 	if err != nil {
 		return err
 	}
 
 	api := slack.New(
-		env.SlackToken,
+		cfg.SlackCfg.SlackKey,
 		slack.OptionDebug(true),
 		)
 	attachment := slack.Attachment{
@@ -48,7 +49,7 @@ func Slack(Icon string, Col string) error {
 		},
 	}
 	channelID, timestamp, err := api.PostMessage(
-		env.SlackChannelId,
+		cfg.SlackCfg.Channel,
 		slack.MsgOptionAsUser(false),
 		slack.MsgOptionAttachments(attachment),
 	)
