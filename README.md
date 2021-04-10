@@ -6,7 +6,6 @@ EPGStationの録画開始・終了・エラーのSlack通知です。
 
 ## 導入手順
 ### Slackアプリを作成
-
 URL: https://api.slack.com
 
 参考: https://api.slack.com/lang/ja-jp
@@ -17,8 +16,9 @@ $ git clone https://github.com/Junch25/epgstation_notification.git
 ```
 
 ### Slackの設定
-
 下記の２つをご自身のものへ変更する。
+- SLACK_API_TOKEN
+- SLACK_CHANNEL_ID
 ```shell script
 # 配置
 $ cd epgstation_notification
