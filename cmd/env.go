@@ -40,5 +40,5 @@ func loadCfg()(config cmdCfg, err error) {
 	if err != nil {
 		return config, err
 	}
-	return config, nil
+	return config, err
 }
