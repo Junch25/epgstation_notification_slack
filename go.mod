@@ -8,5 +8,6 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/slack-go/slack v0.8.2
 	github.com/spf13/cobra v1.1.3
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gotest.tools/gotestsum v1.6.3 // indirect
 )

@@ -1,0 +1,3 @@
+slack-config:
+  token-key: "SLACK_API_TOKEN"
+  channel: "SLACK_CHANNEL_ID"
