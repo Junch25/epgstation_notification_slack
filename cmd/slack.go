@@ -32,11 +32,6 @@ func Slack(Icon string, Col string) error {
 				Short: false,
 			},
 			{
-				Title: "Extended",
-				Value: env.Extended,
-				Short: false,
-			},
-			{
 				Title: "RecPath",
 				Value: env.RecPath,
 				Short: false,
